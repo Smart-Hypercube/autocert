@@ -1,6 +1,6 @@
 """Let's Encrypt library for human beings"""
 
-__all__ = ['LetsEncrypt']
+__all__ = ['LetsEncrypt', 'LetsEncryptStaging']
 
 import acme.challenges
 import acme.client
@@ -12,7 +12,7 @@ import OpenSSL
 
 
 class LetsEncrypt:
-    DIRECTORY_URL = 'https://acme-staging-v02.api.letsencrypt.org/directory'
+    DIRECTORY_URL = 'https://acme-v02.api.letsencrypt.org/directory'
 
     def __init__(self, key: str, uri=None, *, phone=None, email=None):
         self.uri = uri
@@ -62,3 +62,7 @@ class LetsEncrypt:
             return self.acme.revoke(certificate, 0)
         except acme.errors.ConflictError:
             pass
+
+
+class LetsEncryptStaging(LetsEncrypt):
+    DIRECTORY_URL = 'https://acme-staging-v02.api.letsencrypt.org/directory'

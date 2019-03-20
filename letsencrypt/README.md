@@ -1,5 +1,10 @@
 # Let's Encrypt library for human beings
 
+Note: The example below used the Let's Encrypt
+[staging environment](https://letsencrypt.org/docs/staging-environment/).
+Replace `letsencrypt.LetsEncryptStaging` with `letsencrypt.LetsEncrypt`
+for production.
+
 ## Create account key
 
 ```bash
@@ -14,7 +19,7 @@ openssl genrsa -out account.key 4096
 with open('account.key') as f:
     account_key = f.read()
 # phone, email, or both can be omitted
-le = letsencrypt.LetsEncrypt(account_key, phone='...', email='...')
+le = letsencrypt.LetsEncryptStaging(account_key, phone='...', email='...')
 uri = le.uri
 print('Please save your accound ID:')
 print(uri)
@@ -23,7 +28,7 @@ print(uri)
 ## After you have an account
 
 ```python3
-le = letsencrypt.LetsEncrypt(account_key, uri)
+le = letsencrypt.LetsEncryptStaging(account_key, uri)
 ```
 
 ## Apply for some certificates!
