@@ -1,5 +1,7 @@
 # Let's Encrypt library for human beings
 
+`pip install 0x01-letsencrypt`
+
 Note: The example below used the Let's Encrypt
 [staging environment](https://letsencrypt.org/docs/staging-environment/).
 Replace `letsencrypt.LetsEncryptStaging` with `letsencrypt.LetsEncrypt`

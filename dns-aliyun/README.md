@@ -1,5 +1,7 @@
 # Aliyun DNS plugin for autocert project
 
+`pip install 0x01-autocert-dns-aliyun`
+
 This plugin provides an automated `perform_dns01()` for
 [autocert](https://github.com/Smart-Hypercube/autocert/tree/master/letsencrypt#apply-for-some-certificates).
 
